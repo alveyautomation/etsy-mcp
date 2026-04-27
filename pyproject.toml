@@ -1,0 +1,71 @@
+[build-system]
+requires = ["hatchling>=1.18"]
+build-backend = "hatchling.build"
+
+[project]
+name = "etsy-mcp"
+version = "0.1.0"
+description = "Model Context Protocol server for Etsy's Open API v3. Read-only listing, shop, order, inventory, and stats tools for Claude and other MCP clients."
+readme = "README.md"
+license = "MIT"
+requires-python = ">=3.10"
+authors = [{ name = "Alvey Automation" }]
+keywords = [
+    "mcp",
+    "model-context-protocol",
+    "etsy",
+    "ecommerce",
+    "claude",
+    "anthropic",
+]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Office/Business",
+    "Topic :: Software Development :: Libraries",
+]
+dependencies = [
+    "mcp>=1.2.0",
+    "requests>=2.31.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=8.0",
+    "pytest-cov>=5.0",
+    "responses>=0.25",
+    "ruff>=0.5",
+]
+
+[project.scripts]
+etsy-mcp = "etsy_mcp.server:main"
+
+[project.urls]
+# Repository URL TBD post-launch — Brett creates the GitHub repo and updates
+# these links manually before publishing.
+Homepage = "https://example.invalid/etsy-mcp"
+Repository = "https://example.invalid/etsy-mcp"
+Issues = "https://example.invalid/etsy-mcp/issues"
+Changelog = "https://example.invalid/etsy-mcp/blob/main/CHANGELOG.md"
+
+[tool.hatch.build.targets.wheel]
+packages = ["etsy_mcp"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py310"
+
+[tool.ruff.lint]
+select = ["E", "F", "W", "I", "B", "UP"]
+ignore = ["E501"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+python_files = ["test_*.py"]
+filterwarnings = ["error"]
