@@ -1,7 +1,7 @@
 """Synthetic fixtures used across the test suite.
 
 All identifiers, names, and SKUs are invented for testing. Any resemblance
-to a real Etsy shop is coincidental — this file must never gain real-world
+to a real Etsy shop is coincidental, this file must never gain real-world
 identifiers.
 """
 
@@ -22,7 +22,7 @@ SAMPLE_TOKEN_RESPONSE = {
 SAMPLE_LISTING = {
     "listing_id": 1234567890,
     "shop_id": SANDBOX_SHOP_PRIMARY,
-    "title": "Lorem Ipsum Handmade Widget — Sample Listing",
+    "title": "Lorem Ipsum Handmade Widget. Sample Listing",
     "description": "A perfectly cromulent widget for testing purposes.",
     "state": "active",
     "price": {"amount": 2999, "divisor": 100, "currency_code": "USD"},
@@ -38,7 +38,7 @@ SAMPLE_LISTING_SEARCH = {
         {
             "listing_id": 1234567891,
             "shop_id": SANDBOX_SHOP_PRIMARY,
-            "title": "Lorem Ipsum Handmade Widget — Deluxe",
+            "title": "Lorem Ipsum Handmade Widget. Deluxe",
             "state": "active",
             "price": {"amount": 4999, "divisor": 100, "currency_code": "USD"},
             "quantity": 4,
@@ -68,14 +68,14 @@ SAMPLE_RECEIPT_DETAIL = {
         {
             "transaction_id": 9000001,
             "listing_id": 1234567890,
-            "title": "Lorem Ipsum Handmade Widget — Sample Listing",
+            "title": "Lorem Ipsum Handmade Widget. Sample Listing",
             "quantity": 1,
             "price": {"amount": 2999, "divisor": 100, "currency_code": "USD"},
         },
         {
             "transaction_id": 9000002,
             "listing_id": 1234567891,
-            "title": "Lorem Ipsum Handmade Widget — Deluxe",
+            "title": "Lorem Ipsum Handmade Widget. Deluxe",
             "quantity": 1,
             "price": {"amount": 2599, "divisor": 100, "currency_code": "USD"},
         },
@@ -161,14 +161,14 @@ SAMPLE_ACTIVE_LISTINGS_PAGE_1 = {
         {
             "listing_id": 1234567890,
             "shop_id": SANDBOX_SHOP_PRIMARY,
-            "title": "Lorem Ipsum Handmade Widget — Sample Listing",
+            "title": "Lorem Ipsum Handmade Widget. Sample Listing",
             "state": "active",
             "quantity": 12,
         },
         {
             "listing_id": 1234567891,
             "shop_id": SANDBOX_SHOP_PRIMARY,
-            "title": "Lorem Ipsum Handmade Widget — Deluxe",
+            "title": "Lorem Ipsum Handmade Widget. Deluxe",
             "state": "active",
             "quantity": 4,
         },
@@ -181,7 +181,7 @@ SAMPLE_ACTIVE_LISTINGS_PAGE_2 = {
         {
             "listing_id": 1234567892,
             "shop_id": SANDBOX_SHOP_PRIMARY,
-            "title": "Lorem Ipsum Handmade Widget — Mini",
+            "title": "Lorem Ipsum Handmade Widget. Mini",
             "state": "active",
             "quantity": 22,
         }

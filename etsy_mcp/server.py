@@ -23,8 +23,7 @@ logger = logging.getLogger(__name__)
 
 mcp = FastMCP("etsy-mcp")
 
-# Lazy singletons. We don't want to require credentials at import time —
-# the MCP host may launch the server with a degenerate environment for
+# Lazy singletons. We don't want to require credentials at import time, # the MCP host may launch the server with a degenerate environment for
 # capability discovery.
 _settings: Optional[Settings] = None
 _client: Optional[EtsyClient] = None
@@ -323,7 +322,7 @@ def etsy_get_active_listings(
 
 
 def main() -> None:
-    """CLI entry point — runs the MCP server over stdio."""
+    """CLI entry point, runs the MCP server over stdio."""
     logging.basicConfig(
         level=logging.INFO,
         format="%(asctime)s %(levelname)s %(name)s %(message)s",

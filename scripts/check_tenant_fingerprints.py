@@ -4,7 +4,7 @@
 This is a safety net for forks and downstream deployments. Extend
 `FORBIDDEN_PATTERNS` with your own tenant-specific tokens before installing
 the hook in a private fork. Out of the box the list is empty for the public
-repository — every contributor should add their own unmergeable identifiers
+repository, every contributor should add their own unmergeable identifiers
 locally and never push that change.
 
 Usage:

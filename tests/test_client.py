@@ -1,6 +1,6 @@
 """Tests for the Etsy HTTP client.
 
-All tests use a mocked `requests.Session` — no live HTTP, no real
+All tests use a mocked `requests.Session`, no live HTTP, no real
 credentials. Synthetic fixtures defined in tests/fixtures.py.
 """
 

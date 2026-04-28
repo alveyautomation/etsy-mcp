@@ -6,13 +6,13 @@ the OAuth authorization-code flow and stores the resulting refresh token.
 This client uses the refresh token to mint short-lived access tokens at
 runtime, refreshing them transparently when they expire or are rejected.
 
-Every request also carries an `x-api-key` header — the keystring from the
+Every request also carries an `x-api-key` header, the keystring from the
 Etsy app registration page. Public read endpoints accept the keystring
 alone; OAuth-scoped endpoints (receipts, inventory) require both the
 keystring AND a valid bearer token.
 
 The client is deliberately small and dependency-light: only `requests` is
-required at runtime. State is per-instance — there is no module-level
+required at runtime. State is per-instance, there is no module-level
 mutable state, so multiple clients can run in the same process against
 different shops without interfering.
 
@@ -119,7 +119,7 @@ class EtsyClient:
         if not token:
             raise EtsyError("Etsy token response missing 'access_token'")
         self._access_token = token
-        # Etsy may return a rotated refresh token — adopt it if present so
+        # Etsy may return a rotated refresh token, adopt it if present so
         # long-running processes don't lose access on the next refresh.
         new_refresh = data.get("refresh_token")
         if new_refresh:

@@ -40,9 +40,9 @@ If you find a code path that violates this, report it as a security issue.
 refresh token used by the server, request the **minimum** read-only scopes
 needed:
 
-- `listings_r` — read listings and inventory
-- `shops_r` — read shop info
-- `transactions_r` — read receipts and transactions
+- `listings_r`, read listings and inventory
+- `shops_r`, read shop info
+- `transactions_r`, read receipts and transactions
 
 Do **not** grant write scopes (`*_w`) to the server's refresh token. v0.1
 cannot use them; v0.2's write tools (when shipped) will document an explicit

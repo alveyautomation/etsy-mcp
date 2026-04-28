@@ -2,7 +2,7 @@
 
 Use this script to record a Loom walkthrough of `etsy-mcp` for the launch posts. Total target: **5 minutes**.
 
-Record in 1080p, monospace terminal at 14pt minimum. Use a sandbox / test Etsy account or a personal shop with no sensitive customer data on screen — never expose real buyer info.
+Record in 1080p, monospace terminal at 14pt minimum. Use a sandbox / test Etsy account or a personal shop with no sensitive customer data on screen, never expose real buyer info.
 
 ## Setup before hitting record
 
@@ -14,13 +14,13 @@ Record in 1080p, monospace terminal at 14pt minimum. Use a sandbox / test Etsy a
 
 ## Script
 
-### 0:00 — 0:30  Cold open
+### 0:00. 0:30  Cold open
 
-> "If you sell on Etsy and you've ever wanted Claude to just *know* what's in your shop, this is for you. I built `etsy-mcp` — the first production-grade MCP server for Etsy. Read-only, MIT-licensed, takes about 90 seconds to install."
+> "If you sell on Etsy and you've ever wanted Claude to just *know* what's in your shop, this is for you. I built `etsy-mcp`, the first production-grade MCP server for Etsy. Read-only, MIT-licensed, takes about 90 seconds to install."
 
 Show the README hero section. Pan slowly through the tool table.
 
-### 0:30 — 1:30  Install and configure
+### 0:30. 1:30  Install and configure
 
 Show in the terminal:
 
@@ -30,11 +30,11 @@ cp .env.example .env
 # edit .env: paste keystring + refresh token + shop_id
 ```
 
-Then show the Claude Code MCP config block — paste it into `~/.claude/claude_code_config.json`. Restart Claude Code. Show the new tools appearing in a new session.
+Then show the Claude Code MCP config block, paste it into `~/.claude/claude_code_config.json`. Restart Claude Code. Show the new tools appearing in a new session.
 
 > "Three env vars and one config block. That's it."
 
-### 1:30 — 2:30  Live demo: shop scan
+### 1:30. 2:30  Live demo: shop scan
 
 Open a fresh Claude Code session. Type:
 
@@ -42,7 +42,7 @@ Open a fresh Claude Code session. Type:
 
 Watch Claude call `etsy_search_listings`, return results, then chain into `etsy_get_inventory` for low-stock variants. Read off the count.
 
-### 2:30 — 3:30  Live demo: orders
+### 2:30. 3:30  Live demo: orders
 
 > "Show me yesterday's orders. Group by buyer and tell me the total revenue."
 
@@ -50,15 +50,15 @@ Claude calls `etsy_search_orders`, gets a list, groups them. Show the resulting 
 
 > "Notice that I never wrote any code. Claude is reading Etsy directly through the MCP server."
 
-### 3:30 — 4:30  Live demo: combined operation
+### 3:30. 4:30  Live demo: combined operation
 
 > "Pull a 30-day stats rollup for the shop, and then for the top-grossing listing in that period, tell me how much inventory is left across all variations."
 
 Claude calls `etsy_get_shop_stats`, then chains `etsy_search_orders` + `etsy_get_inventory` to identify and report on the listing. Highlight the multi-step reasoning happening over the MCP surface.
 
-> "This is the unlock — Claude can chain reads across listings, orders, inventory, and shop stats in one conversation. Without an SDK. Without any code I had to write."
+> "This is the unlock. Claude can chain reads across listings, orders, inventory, and shop stats in one conversation. Without an SDK. Without any code I had to write."
 
-### 4:30 — 5:00  Close
+### 4:30. 5:00  Close
 
 Show the GitHub repo briefly. Mention:
 
@@ -67,7 +67,7 @@ Show the GitHub repo briefly. Mention:
 - Open to issues + PRs
 - Star + share if it's useful
 
-> "Repo link in the description. v0.2 with write tools is a few weeks out — leave a comment if there's a specific endpoint you'd like exposed first."
+> "Repo link in the description. v0.2 with write tools is a few weeks out, leave a comment if there's a specific endpoint you'd like exposed first."
 
 End on the README hero shot.
 
@@ -82,8 +82,8 @@ End on the README hero shot.
 
 After recording, the launch posts go to:
 
-1. **Twitter/X** — single thread, 6-8 tweets, embed the Loom in tweet 1.
-2. **Reddit r/MCP** — title: *"etsy-mcp: first production-grade MCP server for Etsy (read-only, MIT)"*. Body: short framing + Loom + GitHub link.
-3. **Reddit r/EtsySellers** — different framing, lead with the use case (*"Use Claude to query your Etsy shop, listings, and orders"*), Loom + GitHub link.
+1. **Twitter/X**, single thread, 6-8 tweets, embed the Loom in tweet 1.
+2. **Reddit r/MCP**, title: *"etsy-mcp: first production-grade MCP server for Etsy (read-only, MIT)"*. Body: short framing + Loom + GitHub link.
+3. **Reddit r/EtsySellers**, different framing, lead with the use case (*"Use Claude to query your Etsy shop, listings, and orders"*), Loom + GitHub link.
 
 Draft copy for all three lives in `LAUNCH_POSTS.md` (to be created).
